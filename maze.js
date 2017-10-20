@@ -16,6 +16,8 @@ window.onload=function(){
 	mazeBoundary = document.getElementById("maze");
 	boundaries = document.querySelectorAll(".boundary");
 
+	start.onclick = Restart;
+
 	end.onmouseover = Win;
 	boundaryo.onmouseover = touchwall;
 	for (var i = 0; i< boundaries.length-1; i++){
@@ -44,5 +46,15 @@ function Win (){ //Check if user won
 		alert("You win")
 
 	}
+
+}
+
+function Restart(){ //Reset game 
+
+	for (var i = 0; i < boundaries.length - 1; i++) 
+	{
+		boundaries[i].className = "boundary";
+	}
+
 
 }

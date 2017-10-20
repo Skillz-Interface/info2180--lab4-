@@ -16,7 +16,7 @@ window.onload=function(){
 	mazeBoundary = document.getElementById("maze");
 	boundaries = document.querySelectorAll(".boundary");
 
-
+	end.onmouseover = Win;
 	boundaryo.onmouseover = touchwall;
 	for (var i = 0; i< boundaries.length-1; i++){
 		boundaries[i].onmouseover = overBound;
@@ -28,9 +28,21 @@ function touchwall(){    //Turns red if mouse hovers over top left wall
 
 }
 
-function overBound(){
+function overBound(){ //Turns all divs red if mouse hovers over any border
+	OutOfBounds = true;
+
 	for( i=0; i < boundaries.length-1; i++)
 {
 	boundaries[i].classList.add("youlose");
 }
+}
+
+function Win (){ //Check if user won
+
+	if (!OutOfBounds){
+		win = true;
+		alert("You win")
+
+	}
+
 }

@@ -1,3 +1,6 @@
+//Lab 4
+//Due date: October 20, 2017
+
 var end;
 var start;
 var boundaries;
@@ -19,6 +22,8 @@ window.onload=function(){
 	start.onclick = Restart;
 
 	end.onmouseover = Win;
+
+	mazeBoundary.onmouseleave = CheatTest;
 	boundaryo.onmouseover = touchwall;
 	for (var i = 0; i< boundaries.length-1; i++){
 		boundaries[i].onmouseover = overBound;
@@ -60,4 +65,10 @@ function Restart(){ //Reset game
 	}
 
 
+}
+
+function CheatTest(){
+	if (true){
+		overBound();
+	}
 }

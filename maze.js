@@ -32,6 +32,7 @@ function touchwall(){    //Turns red if mouse hovers over top left wall
 
 function overBound(){ //Turns all divs red if mouse hovers over any border
 	OutOfBounds = true;
+	statusState.innerText = "You Lose! Click the 'S' to reset and play again.";
 
 	for( i=0; i < boundaries.length-1; i++)
 {
@@ -43,11 +44,13 @@ function Win (){ //Check if user won
 
 	if (!OutOfBounds){
 		win = true;
-		alert("You win")
+		statusState.innerText= 'You Win! Click the "S" to reset and play again.';
+
+		}
 
 	}
 
-}
+
 
 function Restart(){ //Reset game 
 
